@@ -11,7 +11,7 @@ stages:
   - job: 'Build'
     displayName: 'Build job'
     pool:
-       name: 'AgentPool'
+      name: 'AgentPool'
       demands:
       - npm
 
@@ -71,7 +71,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-       name: 'AgentPool'
+      name: 'AgentPool'
     environment: dev
     variables:
     - group: Release
@@ -94,7 +94,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-       name: 'AgentPool'
+      name: 'AgentPool'
     environment: test
     variables:
     - group: 'Release'
@@ -142,6 +142,6 @@ stages:
               azureSubscription: 'Resource Manager - Tailspin - Space Game'
               resourceGroupName: 'tailspin-space-game-rg'
               webAppName: '$(WebAppNameStaging)'
-              sourceSlot: 'swap'
+              sourceSlot: 'Swap'
               targetSlot: 'production'
               action: 'Swap Slots'
